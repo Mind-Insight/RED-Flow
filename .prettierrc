@@ -1,0 +1,16 @@
+{
+    "tabWidth": 2,
+    "useTabs": true,
+    "semi": false,
+    "arrowParens": "avoid",
+    "importOrder": [
+        "<THIRD_PARTY_MODULES>",
+        "^@/components/(.*)$",
+        "^@/hooks/(.*)$",
+        "^@/assets/(.*)$",
+        "^../(.*)$",
+        "^./(.*)$"
+    ],
+    "importOrderSeparation": true,
+    "importOrderSortSpecifiers": true
+}

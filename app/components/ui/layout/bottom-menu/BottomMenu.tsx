@@ -1,4 +1,4 @@
-import { TypeNav } from "./menu.interface"
+import type { TypeNav } from "./menu.interface"
 import { FC } from "react"
 import { Text, View } from "react-native"
 import { menuData } from "./menu.data"
@@ -11,13 +11,14 @@ interface IBottomMenu {
 }
 
 const BottomMenu: FC<IBottomMenu> = ({ currentRoute, nav }) => {
-    const {bottom} = useSafeAreaInsets()
+	const { bottom } = useSafeAreaInsets()
 	return (
 		<View
-            className="pt-5 px-3 flex-row justify-between items-center w-full bg-[#1e1c2e]"
-            style={{
-                paddingBottom: bottom + 20
-            }}>
+			className="pt-5 px-3 flex-row justify-between items-center w-full bg-[#1e1c2e]"
+			style={{
+				paddingBottom: bottom + 20,
+			}}
+		>
 			{menuData.map(item => (
 				<MenuItem
 					nav={nav}

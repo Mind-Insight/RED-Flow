@@ -3,12 +3,9 @@ import { IRoute } from "./navigation.types";
 import Home from "@/components/screens/home/Home";
 import Settings from "@/components/screens/settings/Settings";
 import Profile from "@/components/screens/profile/Profile";
+import Statistics from "@/components/screens/statistics/Statistics";
 
 export const routes: IRoute[] =[
-    {
-        name: "Auth",
-        component: Auth
-    },
     {
         name: "Home",
         component: Home
@@ -20,5 +17,9 @@ export const routes: IRoute[] =[
     {
         name: "Profile",
         component: Profile
+    },
+    {
+        name: "Statistics",
+        component: Statistics
     }
 ]

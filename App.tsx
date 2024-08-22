@@ -1,13 +1,23 @@
+import Auth from "@/components/screens/auth/Auth"
+import Navigation from "@/navigation/Navigation"
+import AuthProvider from "@/providers/AuthProvider"
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query"
 import { StatusBar } from "expo-status-bar"
 import { Text, View } from "react-native"
+import { SafeAreaProvider } from "react-native-safe-area-context"
 
+const queryClient = new QueryClient()
 
 export default function App() {
 	return (
-		<View className="flex-1 bg-[#1e1c2e]">
-            <Text>hello Hello hello</Text>
-			<StatusBar style="auto" />
-		</View>
+        <QueryClientProvider client={queryClient}>
+            <AuthProvider>
+                <SafeAreaProvider>
+                    <Navigation></Navigation>
+                </SafeAreaProvider>
+            </AuthProvider>
+            <StatusBar style="light"></StatusBar>
+        </QueryClientProvider>
 	)
 }
 

@@ -1,7 +1,9 @@
+import BottomMenu from "@/components/ui/layout/bottom-menu/BottomMenu"
 import { useAuth } from "@/hooks/useAuth"
-import { useNavigationContainerRef } from "@react-navigation/native"
+import { NavigationContainer, useNavigationContainerRef } from "@react-navigation/native"
 import { FC, useEffect, useState } from "react"
 import { Text, View } from "react-native"
+import PrivateNavigation from "./PrivateNavigation"
 
 const Navigation: FC = () => {
     const {user} = useAuth()
@@ -25,9 +27,14 @@ const Navigation: FC = () => {
     }, [])
 
 	return (
-		<View>
-			<Text>Navigation</Text>
-		</View>
+		<>
+            <NavigationContainer ref={navRef}>
+                <PrivateNavigation></PrivateNavigation>
+            </NavigationContainer>
+            {user && currentRoute && (
+                <BottomMenu nav={navRef.navigate} currentRoute={ currentRoute }></BottomMenu>
+            )}
+        </>
 	)
 }
 
